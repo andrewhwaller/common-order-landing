@@ -8,3 +8,7 @@ html.dark svg {
     -webkit-filter: invert(100%);
     filter: invert(100%);
 }
+
+[x-cloak] {
+    display: none !important;
+}
