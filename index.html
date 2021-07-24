@@ -29,14 +29,8 @@
                   <div class="-mr-2 flex items-center md:hidden">
                     <button @click="openMenu" type="button" class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-gray-600" aria-expanded="false">
                       <span class="sr-only">Open main menu</span>
-                      <svg
-                        class="h-6 w-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
                       </svg>
                     </button>
                   </div>
@@ -49,7 +43,10 @@
               </div>
             </nav>
         </div>
-        <div x-show="open" class="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden" x-cloak>
+        <div x-show="open"
+             x-transition:enter="transition ease-in-out duration-300" x-transition:enter-start="opacity-0 transform scale-y-0 -translate-y-1/2"
+             x-transition:enter-end="opacity-100 transform scale-x-100 translate-y-0" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100 transform scale-y-100 translate-y-0" x-transition:leave-end="opacity-0 transform scale-y-0 -translate-y-1/2"
+             class="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden" x-cloak>
             <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div class="px-5 pt-4 flex items-center justify-between">
                 <div class="flex flex-col my-auto">
@@ -59,7 +56,7 @@
                     class="text-3xl tracking-tight text-blue-gray-700 font-semibold leading-6 mt-0.5">Order</span>
                 </div>
                 <div class="-mr-2">
-                  <button @click="closeMenu" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                  <button @click="closeMenu" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-600">
                     <span class="sr-only">Close menu</span>
                       <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -83,11 +80,11 @@
             <div class="lg:grid xs:flex xs:flex-col lg:grid-cols-2 lg:gap-8">
               <div class="mx-auto max-w-md px-4 xs:max-w-2xl xs:px-6 xs:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div class="lg:py-24">
-                  <h1 xstyle="font-family: Lusitana;" class="mt-4 text-3xl tracking-tight font-bold text-cyan-800 xs:mt-5 xs:text-4xl lg:mt-6 xl:text-5xl">
+                  <h1 class="mt-4 text-3xl tracking-tight font-bold text-cyan-800 xs:mt-5 xs:text-4xl lg:mt-6 xl:text-5xl">
                     <span class="block">Liturgy and doctrine</span>
                     <span class="pb-3 block text-green-500 xs:pb-5">in an online library</span>
                   </h1>
-                  <p xstyle="font-family: Lusitana;" class="text-base text-gray-900 xs:text-xl lg:text-lg xl:text-xl">
+                  <p class="text-base text-gray-900 xs:text-xl lg:text-lg xl:text-xl">
                     Common Order is an online repository of doctrinal and liturgical resources from the historical Presbyterian tradition.
                   </p>
                 </div>
@@ -300,22 +297,25 @@
           </div>
         </main>
       <footer class="bg-gray-50" aria-labelledby="footer-heading">
-          <h2 id="footer-heading" class="sr-only">Footer</h2>
-          <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
-            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-              <div class="space-y-8 xl:col-span-1">
-                <div class="flex flex-col my-auto">
-                  <span style="font-family: Lusitana;"
-                        class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6">Common</span>
-                  <span style="font-family: Lusitana;"
-                        class="text-3xl tracking-tight text-blue-gray-700 font-semibold leading-6 mt-0.5">Order</span>
-                </div>
-                <p class="text-gray-500 text-base">
-                  Doctrine and liturgy for all the people.
-                  <br>
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
+          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="space-y-8 xl:col-span-1">
+              <div class="flex flex-col my-auto">
+                <span style="font-family: Lusitana;"
+                  class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6">Common</span>
+                <span style="font-family: Lusitana;"
+                  class="text-3xl tracking-tight text-blue-gray-700 font-semibold leading-6 mt-0.5">Order</span>
+              </div>
+              <div class="text-gray-500 text-base flex flex-col">
+                <span>
+                  Liturgy and doctrine for all the people.
+                </span>
+                <span>
                   Common Order is a Lukan Priorities project.
-                </p>
-                <div class="flex space-x-6">
+                </span>
+              </div>
+              <div class="flex space-x-6">
                   <a href="https://www.facebook.com/LukanPriorities" class="text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Facebook</span>
                     <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -330,132 +330,6 @@
                   </a>
                 </div>
               </div>
-<!--              <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">-->
-<!--                <div class="md:grid md:grid-cols-2 md:gap-8">-->
-<!--                  <div>-->
-<!--                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">-->
-<!--                      Solutions-->
-<!--                    </h3>-->
-<!--                    <ul class="mt-4 space-y-4">-->
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Marketing-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Analytics-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Commerce-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Insights-->
-<!--                        </a>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </div>-->
-<!--                  <div class="mt-12 md:mt-0">-->
-<!--                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">-->
-<!--                      Support-->
-<!--                    </h3>-->
-<!--                    <ul class="mt-4 space-y-4">-->
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Pricing-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Documentation-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Guides-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          API Status-->
-<!--                        </a>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--                <div class="md:grid md:grid-cols-2 md:gap-8">-->
-<!--                  <div>-->
-<!--                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">-->
-<!--                      Company-->
-<!--                    </h3>-->
-<!--                    <ul class="mt-4 space-y-4">-->
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          About-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Blog-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Jobs-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Press-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Partners-->
-<!--                        </a>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </div>-->
-<!--                  <div class="mt-12 md:mt-0">-->
-<!--                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">-->
-<!--                      Legal-->
-<!--                    </h3>-->
-<!--                    <ul class="mt-4 space-y-4">-->
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Claim-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Privacy-->
-<!--                        </a>-->
-<!--                      </li>-->
-
-<!--                      <li>-->
-<!--                        <a href="#" class="text-base text-gray-500 hover:text-gray-900">-->
-<!--                          Terms-->
-<!--                        </a>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
             </div>
             <div class="mt-12 border-t border-gray-200 py-8">
               <p class="text-base text-gray-400 xl:text-center">
