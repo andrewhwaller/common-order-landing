@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+      'display': ['Lusitana', 'Garamond', 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', 'serif'],
     },
     screens: {
       'xs': '320px',
