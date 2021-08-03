@@ -10,21 +10,20 @@
   </head>
   <body>
     <div class="flex flex-col">
-      <header class="sticky top-0 z-50 py-4 bg-blue-gray-50 shadow" x-data="menu">
+      <header class="top-0 z-50 py-4 bg-blue-gray-50 shadow" x-data="menu">
         <div class="">
           <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
             <div class="flex items-center flex-1">
               <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="#">
                   <span class="sr-only">Common Order</span>
-                    <div class="flex flex-col my-auto">
-                      <span
-                        style="font-family: Lusitana;"
-                        class="text-3xl tracking-tight text-blue-gray-700 font-semibold leading-6">Common</span>
-                      <span
-                        style="font-family: Lusitana;"
-                        class="text-3xl tracking-tight text-blue-gray-700 font-semibold leading-6 mt-0.5">Order</span>
+                  <div class="flex items-center flex-shrink-0">
+                    <svg class="my-auto h-16 w-16 text-red-700 stroke-current fill-current" stroke-width="0.5px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 128 128"><path d="M90 18a5 5 0 00-10 0v10h10zm-2 0h-2v-2.816A3 3 0 0188 18zm-4-2.816V18h-2a3 3 0 012-2.816zM82 20h2v6h-2zm4 6v-6h2v6zM48 18a5 5 0 00-10 0v10h10zm-2 0h-2v-2.816A3 3 0 0146 18zm-4-2.816V18h-2a3 3 0 012-2.816zM40 20h2v6h-2zm4 6v-6h2v6z"/><path d="M85.456 2.1l-.225-.1H42.8l-.225.106A38 38 0 0 0 21 36.261V126h86V36.236A38 38 0 0 0 85.456 2.1zM32.409 45.929A6.926 6.926 0 0 1 34 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 46 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 58 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zM63 36.261V124h-3V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 50 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 38 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 26 50v74h-3V36.261a36 36 0 0 1 20.025-32.15A36 36 0 0 1 63 36.236zm0-12.025A38.062 38.062 0 0 0 46.923 4.01H63zM65 4.01h16.117A38.052 38.052 0 0 0 65 24.259zm9.409 41.919A6.926 6.926 0 0 1 76 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 88 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 100 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zM105 124h-3V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 92 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 80 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 68 50v74h-3V36.261a36 36 0 0 1 20.025-32.15A36 36 0 0 1 105 36.236z"/></svg>
+                    <div class="flex flex-col mt-1">
+                      <span style="font-family: Lusitana;" class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6">Common</span>
+                      <span style="font-family: Lusitana;" class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6 mt-0.5">Order</span>
                     </div>
+                  </div>
                   </a>
                   <div class="-mr-2 flex items-center md:hidden">
                     <button @click="openMenu" type="button" class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-200 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-gray-600" aria-expanded="false">
@@ -36,7 +35,8 @@
                   </div>
                 </div>
                 <div class="hidden space-x-2 md:flex md:ml-10">
-                  <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-normal rounded-md text-blue-gray-900 bg-transparent hover:bg-blue-gray-200">Library</a>
+                  <a href="https://app.commonorder.org" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-normal rounded-md text-blue-gray-900 bg-transparent hover:bg-blue-gray-200">Library
+                  </a>
                   <a href="/about.html" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-normal rounded-md text-blue-gray-900 bg-transparent hover:bg-blue-gray-200">About</a>
                   <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-normal rounded-md text-blue-gray-900 bg-transparent hover:bg-blue-gray-200">Support</a>
                 </div>
@@ -89,10 +89,10 @@
                   </p>
                   <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
                     <div class="rounded-md shadow">
-                      <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent
+                      <a href="https://app.commonorder.org" target="_blank" class="w-full flex items-center justify-center px-8 py-3 border border-transparent
                       text-base font-medium rounded-md text-white bg-sky-800 hover:bg-sky-900 md:py-4
                       md:text-lg md:px-10">
-                        Browse our collection
+                        Launch the app
                       </a>
                     </div>
                     <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
@@ -221,7 +221,7 @@
               </div>
             </div>
           </div>
-         <div class="relative bg-blue-gray-900">
+          <div class="relative bg-blue-gray-900">
             <div class="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
               <img class="w-full h-full object-cover filter saturate-150 contrast-125" src="./static/book.jpeg" alt="">
               <div aria-hidden="true" class="absolute inset-0"></div>
@@ -264,7 +264,7 @@
                 </p>
                 <div class="mt-8">
                   <div class="inline-flex rounded-md shadow">
-                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
                       Get in touch
                     </a>
                   </div>
@@ -272,17 +272,69 @@
               </div>
             </div>
           </div>
+        <div class="relative bg-white">
+          <div class="absolute inset-0">
+            <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
+          </div>
+          <div id="contact" class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
+            <div class="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
+              <div class="max-w-lg mx-auto">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                  Get in touch
+                </h2>
+                <p class="mt-3 text-lg leading-6 text-gray-500">
+                  Want to support the project? Have any questions or suggestions? Drop Andrew a direct email or use the contact form!
+                </p>
+                <dl class="mt-8 text-base text-gray-500">
+                  <div class="mt-6">
+                    <dt class="sr-only">Email</dt>
+                    <dd class="flex">
+                      <svg class="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <a href="mailto:andrew@andrewhwaller.com" target="_blank" class="ml-3">andrew@andrewhwaller.com</a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+              <div class="max-w-lg mx-auto lg:max-w-none">
+                <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 gap-y-6">
+                  <div>
+                    <label for="full-name" class="sr-only">Full name</label>
+                    <input type="text" name="full-name" id="full-name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-sky-500 focus:border-sky-500 border-gray-300 rounded-md" placeholder="Full name">
+                  </div>
+                  <div>
+                    <label for="email" class="sr-only">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-sky-500 focus:border-sky-500 border-gray-300 rounded-md" placeholder="Email">
+                  </div>
+                  <div>
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-sky-500 focus:border-sky-500 border border-gray-300 rounded-md" placeholder="Message"></textarea>
+                  </div>
+                  <div>
+                    <button type="submit" class="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-sky-800 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         </main>
       <footer class="bg-gray-50" aria-labelledby="footer-heading">
         <h2 id="footer-heading" class="sr-only">Footer</h2>
         <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
           <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8 xl:col-span-1">
-              <div class="flex flex-col my-auto">
-                <span style="font-family: Lusitana;"
-                  class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6">Common</span>
-                <span style="font-family: Lusitana;"
-                  class="text-3xl tracking-tight text-blue-gray-700 font-semibold leading-6 mt-0.5">Order</span>
+              <div class="flex items-center flex-shrink-0">
+                <svg class="my-auto h-16 w-16 text-red-700 stroke-current fill-current" stroke-width="0.5px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 128 128"><path d="M90 18a5 5 0 00-10 0v10h10zm-2 0h-2v-2.816A3 3 0 0188 18zm-4-2.816V18h-2a3 3 0 012-2.816zM82 20h2v6h-2zm4 6v-6h2v6zM48 18a5 5 0 00-10 0v10h10zm-2 0h-2v-2.816A3 3 0 0146 18zm-4-2.816V18h-2a3 3 0 012-2.816zM40 20h2v6h-2zm4 6v-6h2v6z"/><path d="M85.456 2.1l-.225-.1H42.8l-.225.106A38 38 0 0 0 21 36.261V126h86V36.236A38 38 0 0 0 85.456 2.1zM32.409 45.929A6.926 6.926 0 0 1 34 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 46 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 58 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zM63 36.261V124h-3V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 50 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 38 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 26 50v74h-3V36.261a36 36 0 0 1 20.025-32.15A36 36 0 0 1 63 36.236zm0-12.025A38.062 38.062 0 0 0 46.923 4.01H63zM65 4.01h16.117A38.052 38.052 0 0 0 65 24.259zm9.409 41.919A6.926 6.926 0 0 1 76 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 88 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zm12 0A6.926 6.926 0 0 1 100 50v74h-6V50a6.926 6.926 0 0 1 1.591-4.071l.631-.846-.879-.585a3 3 0 1 1 3.314 0l-.879.585zM105 124h-3V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 92 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 80 50v74h-2V50a8.33 8.33 0 0 0-1.447-4.484 5 5 0 1 0-7.106 0A8.33 8.33 0 0 0 68 50v74h-3V36.261a36 36 0 0 1 20.025-32.15A36 36 0 0 1 105 36.236z"/></svg>
+                <div class="flex flex-col mt-1">
+                  <span style="font-family: Lusitana;" class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6">Common</span>
+                  <span style="font-family: Lusitana;" class="text-3xl tracking-tight text-blue-gray-700 font-bold leading-6 mt-0.5">Order</span>
+                </div>
               </div>
               <div class="text-gray-500 text-base flex flex-col">
                 <span>
