@@ -1,6 +1,8 @@
 const { resolve } = require('path')
+import { minifyHtml } from 'vite-plugin-html';
 
 module.exports = {
+  plugins: [minifyHtml()],
   build: {
     rollupOptions: {
       input: {
